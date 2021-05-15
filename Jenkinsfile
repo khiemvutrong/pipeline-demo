@@ -6,7 +6,7 @@ pipeline {
         stage("build") {
 
             steps {
-                echo 'building the application ... create by khiem'
+                echo 'building the application ... create by someone in my team'
             }
         }
 
