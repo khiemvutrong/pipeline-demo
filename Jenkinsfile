@@ -1,4 +1,3 @@
-def 'dev'
 def defaultTag = 'latest'
 def image = 'dome-jenkins'
 
