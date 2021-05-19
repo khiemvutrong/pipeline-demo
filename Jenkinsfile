@@ -1,3 +1,6 @@
+def defaultTag = 'latest'
+def image = 'dome-jenkins'
+
 pipeline {
     agent any
 
@@ -6,22 +9,22 @@ pipeline {
         stage("build") {
 
             steps {
-                sh "docker build -t pipeline ."
-                sh "docker-compose up -d"
+                echo 'building the application ... create by someone in my team'
             }
         }
 
-        // stage("test") {
+        stage("test") {
 
-        //     steps {
-        //         echo 'testing the application ... alo what are you doing?'
-        //     }
-        // }
+            steps {
+                echo 'testing the application ... alo what are you doing?'
+            }
+        }
 
-        // stage('deploying') {
-        //     steps {
-        //         sh 'docker-compose up -d'
-        //     }
-        // }
+        stage('deploy') {
+
+            steps {
+                echo 'deploying the application ...'
+            }
+        }
     }
 }
