@@ -50,7 +50,7 @@ pipeline {
        stage('Docker Build, Push'){
             steps {
                 dir ('./') {
-                    withDockerRegistry(credentialsId: '3e5c3377-f7fc-4434-b059-ef385bf29404', url: ecrUrl) {
+                    withDockerRegistry(credentialsId: '3e5c3377-f7fc-4434-b059-ef385bf29404', url: gitRrl) {
                         sh "docker build -t ${imageName} ."
                         sh "docker tag ${imageName}:latest ${imageName}:${GIT_TAG}"
                         sh "docker push ${imageName}:${GIT_TAG}"
